@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers | Shadeware</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="Logo.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1ec900;
+    }
+
+    .careers-section {
+      max-width: 1000px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .careers-section h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #1ec900;
+    }
+
+    .job-listing {
+      background-color: #0a0a0a;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 12px #111;
+      transition: transform 0.3s ease;
+    }
+
+    .job-listing:hover {
+      transform: translateY(-4px);
+    }
+
+    .job-title {
+      font-size: 1.5rem;
+      color: #1ec900;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .job-location {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .job-desc {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+      display: none;
+    }
+
+    .job-desc.active {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .apply-box {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 0 12px #111;
+      display: none;
+    }
+
+    .apply-box h2 {
+      color: #1ec900;
+      margin-bottom: 1rem;
+    }
+
+    .apply-box input[type="email"], .apply-box input[type="tel"], .apply-box input[type="text"] {
+      padding: 0.7rem;
+      width: 100%;
+      border: 2px solid #1ec900;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      background-color: #111;
+      color: #fff;
+    }
+
+    .apply-box button {
+      background-color: #1ec900;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .apply-box button:hover {
+      background-color: #9900cc;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Gecko OS Project</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="GeckoOS.html">GeckoOS</a>
+      <a href="updates.html">Updates</a>    
+      <a href="help.html">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="careers-section">
+    <h1>Updates</h1>
+
+    <div class="job-listing">
+<div class="job-title">3.8.01 | 5/10/25 <i class="fas fa-chevron-down"></i></div>
+<div class="job-location">Core Update</div>
+<div class="job-desc">
+  <p><strong>Coreutils Rewritten in Rust:</strong> The entire base coreutils suite has been re-implemented in Rust to maximize both performance and memory safety. This includes replacements for critical shell-level tools such as <code>ls</code>, <code>cat</code>, <code>cp</code>, and <code>mv</code>. These new implementations are faster, safer, and more maintainable in the long term, setting a new foundation for system-level operations on Gecko OS.</p>
+
+  <p><strong>Gecko UI Rendering Enhancements:</strong> Improvements were made to the desktop environment's Gecko engine integration. We've optimized UI rendering paths for smoother animation timing and increased frame stability under multi-window conditions. This also improves responsiveness on lower-end systems and virtual machines.</p>
+
+  <p><strong>Bluetooth Security Patch:</strong> A critical patch was deployed to fix a vulnerability in the Bluetooth stack. The exploit, which allowed unauthorized proximity-based data injection during pairing mode, has been mitigated with stricter device authentication, encrypted handshake verification, and updated timeout logic for stale session handling.</p>
+
+  <p><strong>Neofsys Command Introduced:</strong> A new command-line utility named <code>neofsys</code> has been added. It serves as a system info splash similar to <code>neofetch</code>, but tuned for Gecko OS with branding, package manager integration, and GPU/driver info baked in. Useful for debugging and system snapshots.</p>
+
+  <p><strong>APK Package Manager Improvements:</strong> Improvements have been made to the APK package management subsystem. APK parsing now supports a broader range of Android manifest configurations, significantly improving compatibility with modern APKs. Additionally, sandboxing routines were upgraded to provide better isolation when launching Android apps on Gecko.</p>
+</div>
+
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </section>
+
+  <script>
+    const titles = document.querySelectorAll('.job-title');
+
+    titles.forEach(title => {
+      title.addEventListener('click', () => {
+        const desc = title.nextElementSibling.nextElementSibling;
+        const applyBox = desc.nextElementSibling;
+        desc.classList.toggle('active');
+        applyBox.classList.toggle('display');
+        const icon = title.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="Logo.png" type="image/png">
+    
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1ec900;
+    }
+
+    .licenses-section {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .licenses-section h1 {
+      font-size: 3rem;
+      color: #1ec900;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .licenses-section h2 {
+      font-size: 1.5rem;
+      color: #1ec900;
+      margin-top: 3rem;
+    }
+
+    .licenses-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #1ec900;
+    }
+
+    .divider {
+      height: 1px;
+      background: #222;
+      margin: 3rem 0;
+    }
+
+    .license-details {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #222;
+      border-radius: 5px;
+    }
+
+    .license-toggle {
+      color: #1ec900;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    function toggleLicenseDetails(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">Gecko OS Project</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="GeckoOS.html">GeckoOS</a>
+      <a href="updates.html">Updates</a>    
+      <a href="help.html">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+<section class="licenses-section">
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="divider"></div>
+
+  <h2>How secure is Gecko OS?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('eulaDetails')">Show Answer</span></p>
+  <div id="eulaDetails" class="license-details">
+    <p>Gecko OS implements a hardened architecture, including sandboxing, zero-trust execution layers, built-in rollback mechanisms, and optional anti-malware capabilities. But the OS is only as secure as the user is smart, so use common-sense.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Does Gecko OS collect any personal data?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('privacyPolicyDetails')">Show Answer</span></p>
+  <div id="privacyPolicyDetails" class="license-details">
+    <p>Nope. We don’t track, log, or collect anything. It's really just not worth our time.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>What kind of applications can I install?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('applicationsDetails')">Show Answer</span></p>
+  <div id="applicationsDetails" class="license-details">
+    <p>Gecko OS supports .deb packages, .apk Android apps, raw binaries, and native compilation of compatible scripts. GeckoW2N lets you convert web apps into native apps, giving you serious flexibility across platforms.</p>
+  </div>
+
+
+  <div class="divider"></div>
+
+  <h2>Can I dual-boot Gecko OS with Windows or Linux?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('dualBoot')">Show Answer</span></p>
+  <div id="dualBoot" class="license-details">
+    <p>Yep. Gecko OS can be dual-booted along side other operating systems.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Does Gecko OS support gaming?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('gamingSupport')">Show Answer</span></p>
+  <div id="gamingSupport" class="license-details">
+    <p>It'd be pretty much the same as running games on Ubuntu so... Windows is probably better for that.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Is Gecko OS good for developers?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('devTools')">Show Answer</span></p>
+  <div id="devTools" class="license-details">
+    <p>Absolutely. Out of the box, you get compilers, terminals, environments, and a very wide support for languages.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Can I customize the OS UI or behaviors?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('customization')">Show Answer</span></p>
+  <div id="customization" class="license-details">
+    <p>Yes. The Gecko desktop environment is fully themable, and config files let you tweak almost everything. We support dynamic window tiling, custom hotkeys, and even programmable gestures on supported trackpads.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>How often does Gecko OS get updated?</h2>
+  <p><span class="license-toggle" onclick="toggleLicenseDetails('updates')">Show Answer</span></p>
+  <div id="updates" class="license-details">
+    <p>Gecko OS gets updated about a few times per month. However, some security updates can happen in as little time as an hour after notice.</p>
+  </div>
+
+</section>
+
+  </section>
+</body>
+</html>
